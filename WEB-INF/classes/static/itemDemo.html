@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>首页 - 第一资产</title>
+<link rel="icon" href="favicon.ico" type="image/ico">
+<meta name="keywords" content="第一资产">
+<meta name="description" content="第一资产">
+<meta name="author" content="yinqi">
+<meta HTTP-EQUIV="pragma" CONTENT="no-cache">
+<meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+<meta HTTP-EQUIV="expires" CONTENT="Mon, 23 Jan 1978 20:52:30 GMT">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/materialdesignicons.min.css" rel="stylesheet">
+<link href="css/style.min.css" rel="stylesheet">
+<link href="css/animate.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1783930_hbst029w46m.css">
+</head>
+  
+<body style="height: 90%">
+<div class="container-fluid m-10 p-0">
+
+  <div class="eachLine row">
+    
+  </div>
+  
+</div>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/main.min.js"></script>
+<script type="text/javascript">
+  document.write('<script src="js/menu.js?' + new Date().getTime() + '"><\/script\>');
+  document.write('<script src="js/ajax.js?' + new Date().getTime() + '"><\/script\>');
+  document.write('<script src="js/common.js?' + new Date().getTime() + '"><\/script\>');
+</script>
+<script type="text/javascript">
+  // var 
+  var mbsToken = sessionStorage.getItem('mbsToken');
+  // crm获取token
+  function generateToken(){
+    var crmToken = "";
+    $.ajax({
+      type: "get",
+      url: api.getCrmToken + sessionStorage.getItem('sso_sessionid'),
+      dataType:"json",
+      success: function(res){
+        console.log(res);
+        crmToken = res.data.crmToken;
+        var menuList = [
+              {
+                ht: '基础信息管理',
+                children: [
+                  {
+                    name: '个人客户信息',
+                    url: masterdataUrl + 'customer/getCustomerListByCustomerCO.action?page=1',
+                    qxV: 'aph2_masterData_KHXX-QX-M10'
+                  },
+                  {
+                    name: '企业客户信息',
+                    url: masterdataUrl + 'company/beforeMdCompanyCustomerList.action?page=1',
+                    qxV: 'aph2_masterData_QYKHXX-QX-M10'
+                  },
+                  {
+                    name: '房产/业主信息',
+                    url: masterdataUrl + 'house/getHouseProperty.action',
+                    qxV: 'aph2_masterData_FCXX-QX-M10'
+                  },
+                  {
+                    name: '基础信息（APH1.0）',
+                    url: url1_0 + 'mg/adminuser.do?method=initMenuForAph&sub=0&token=' + mbsToken,
+                    qxV: ''
+                  },
+                  {
+                    name: '个人客户信息审核',
+                    url: masterdataUrl + 'customer/getClientPersonVerify.action?page=1&pageSize=10',
+                    qxV: 'aph2_masterData_KHSH-QX-M10'
+                  },
+                ]
+              },
+              {
+                ht: 'CRM系统',
+                children: [
+                  {
+                    name: 'CRM',
+                    url: crmUrl + '?token=' + crmToken,
+                    qxV: ''
+                  },
+                  {
+                    name: 'CRM来电弹屏',
+                    url: crmUrl + '/call/gotoCall?token=' + crmToken,
+                    qxV: 'aph2_crm_LDTPGL-QX-M10'
+                  },
+                  {
+                    name: 'CRM系统及报表（APH1.0）',
+                    url: url1_0 + 'mg/adminuser.do?method=initMenuForAph&sub=2&token=' + mbsToken,
+                    qxV: ''
+                  },
+                  {
+                    name: 'CRM知识库',
+                    url: 'https://quora.firstcare.com.cn/quora/getQuestionList.action',
+                    qxV: 'aph2_quora_WDXT400-QX-M10'
+                  }
+                ]
+              },
+              {
+                ht: '流程与标准化审定',
+                children: [
+                  {
+                    name: '流程与标准化审定申请',
+                    url: approveUrl + 'apply/getApplyList.action',
+                    qxV: ''
+                  },
+                  {
+                    name: '流程与标准化审定查询',
+                    url: approveUrl + 'approve/openApproveList.action',
+                    qxV: ''
+                  },
+                  {
+                    name: '流程与标准化审定查询（APH1.0）',
+                    url: url1_0 + 'mg/aphFlowOperationAction.do?method=getListAphFlowAndOperation&token=' + mbsToken,
+                    qxV: ''
+                  },
+                  {
+                    name: '电子签名管理',
+                    url: approveUrl + 'signature/getSignatureList.action',
+                    qxV: 'aph2_approve_QMGL-QX-M10'
+                  }
+                ]
+              },
+              {
+                ht: '八类标准化体系文件管理',
+                children: [
+                  {
+                    name: '标准化文件目录管理',
+                    url: oa443 + 'system/getSystemDirectoryList.action',
+                    qxV: 'aph2_oa_BZHWJMLGL-QX-M10'
+                  },
+                  {
+                    name: '标准化文件管理',
+                    url: oa443 + 'system/beforeSystemList.action',
+                    qxV: 'aph2_oa_BZHWJGL-QX-M10'
+                  }
+                ]
+              },
+              {
+                ht: '工作计划管理平台',
+                children: [
+                  {
+                    name: '流程与标准化工作表',
+                    url: oa443 + 'workplan/getOaProjectList.action',
+                    qxV: 'aph2_oa_GZJH-QX-M10'
+                  },
+                  {
+                    name: '流程与标准化工作表（APH1.0）',
+                    url: url1_0 + 'mg/pages/aphworkplan/configAll/aphWorkPlanCategory.jsp?sys=aph&token=' + mbsToken,
+                    qxV: ''
+                  },
+                  {
+                    name: '独立主体管理',
+                    url: oa443 + 'workplan/getSubjectListByPage.action?page=1',
+                    qxV: 'aph2_oa_KHZT-QX-M10'
+                  },
+                  {
+                    name: '我的工作',
+                    url: oa443 + 'workplan/getMyTaskListByPage.action',
+                    qxV: ''
+                  },
+                ]
+              },
+              {
+                ht: '当代置业战术地图',
+                children: [
+                  {
+                    name: '战术地图',
+                    url: url1_0 + 'mg/fileCategory.do?method=displayListDIY&type=TacticalMap&maxLevel=5&token=' + mbsToken,
+                    qxV: ''
+                  },
+                ]
+              },
+              {
+                ht: '里程碑执行表管理',
+                children: [
+                  {
+                    name: '一级流程与标准化节点状态',
+                    url: oa443 + 'workplan/getProjectFirstList.action',
+                    qxV: 'aph2_oa_YJZXB-QX-M10'
+                  },
+                  {
+                    name: '二级流程与标准化节点状态',
+                    url: oa443 + 'workplan/getProjectSecondList.action',
+                    qxV: 'aph2_oa_EJZXB-QX-M10'
+                  },
+                  {
+                    name: '里程碑执行表执行得分',
+                    url: oa443 + 'workplan/getProjectReportList.action',
+                    qxV: 'aph2_oa_ZXPG-QX-M10'
+                  },
+                  {
+                    name: '里程碑执行表列表',
+                    url: oa443 + 'workplan/getMilepostProjectListByPage.action',
+                    qxV: 'aph2_oa_LCBZX-QX-M10'
+                  },
+                  {
+                    name: '独立主体管理',
+                    url: oa443 + 'workplan/getTemplateCategoryList.action',
+                    qxV: 'aph2_oa_LCBFL-QX-M10'
+                  },
+                  {
+                    name: '模版管理',
+                    url: oa443 + 'workplan/getTemplateList.action?page=1',
+                    qxV: 'aph2_oa_LCBMB-QX-M10'
+                  },
+                  {
+                    name: '标签管理',
+                    url: oa443 + 'label/getPageTaskLablesAction.action?page=1',
+                    qxV: 'aph2_oa_LCBFL-QX-M10'
+                  },
+                ]
+              },
+              {
+                ht: '会议管理',
+                children: [
+                  {
+                    name: '会议申请',
+                    url: oa443 + 'meeting/getOaMeetingList.action?page=1',
+                    qxV: 'aph2_oa_HYSQ-QX-M10'
+                  },
+                  {
+                    name: '会议议程查询',
+                    url: oa443 + 'meeting/getOaMeetingAgendaList.action?page=1',
+                    qxV: 'aph2_oa_HYYC-QX-M10'
+                  },
+                  {
+                    name: '参会人分组管理',
+                    url: oa443 + 'meeting/getOaMeetingWorkgroupList.action?page=1',
+                    qxV: 'aph2_oa_HYGZZ-QX-M10'
+                  },
+                ]
+              },
+              {
+                ht: '职责授权管理',
+                children: [
+                  {
+                    name: '授权类型管理',
+                    url: approveUrl + 'approve/getBusinessList.action',
+                    qxV: 'aph2_approve_YWLX-QX-M10'
+                  },
+                  {
+                    name: '授权目录管理',
+                    url: approveUrl + 'apply/initTree.action',
+                    qxV: 'aph2_approve_YWLX-QX-M10'
+                  },
+                  {
+                    name: '授权事项管理',
+                    url: approveUrl + 'apply/itemTree.action',
+                    qxV: 'aph2_approve_YWLX-QX-M10'
+                  }
+                ]
+              },
+              {
+                ht: '五书鉴定',
+                children: [
+                  {
+                    name: '五书鉴定',
+                    url: oa443 + 'fivebook/getFiveBookPlanList.action',
+                    qxV: ''
+                  },
+                  {
+                    name: '五书鉴定配置',
+                    url: oa443 + 'fivebook/getFiveBookPlanList.action?config=true',
+                    qxV: 'aph2_oa_WSGL-QX-M10'
+                  },
+                ]
+              },
+              {
+                ht: '知识库',
+                children: [
+                  {
+                    name: '目录管理',
+                    url: oa443 + 'knowledge/getDirectoryList.action',
+                    qxV: 'aph2_oa_MLGL-QX-M10'
+                  },
+                  {
+                    name: '文件管理',
+                    url: oa443 + 'knowledge/beforeOaFileList.action',
+                    qxV: 'aph2_oa_WJGL-QX-M10'
+                  },
+                  {
+                    name: '知识中心(APH1.0)',
+                    url: url1_0 + 'mg/documentManage.do?method=assemblingLibraryMemu&knowCom=FC&token=' + mbsToken,
+                    qxV: ''
+                  },
+                ]
+              },
+              {
+                ht: '问答系统',
+                children: [
+                  {
+                    name: '问答系统',
+                    url: oa443 + 'quora/getQuestionList?page=1',
+                    qxV: ''
+                  }
+                ]
+              }
+            ];
+        xrCard(menuList, $('.eachLine'));
+        var hLen = $('.eachLine').length;
+        for(var i = 0; i < hLen; i++){
+          var iLen = $('.eachLine').eq(i).find('.zcdCard').length;
+          for(var j=0;j<iLen;j++){
+            var liLen = $('.eachLine').eq(i).find('.zcdCard').eq(j).find('.zcdUl').height();
+            if(liLen>180){
+              $('.eachLine').eq(i).find('.zcdCard').eq(j).children('.zcdFooter').show();
+            } else {
+              $('.eachLine').eq(i).find('.zcdCard').eq(j).children('.zcdFooter').hide();
+            }
+          }
+        }
+         $('.zcdFooter span').click(function() {
+          var wh = $(document).height(),//是文档窗口高度
+              ot = $(this).offset().top;
+          var bh = wh - ot;
+          var className = $(this).attr('class');
+          if(className == 'clickOpen'){
+            $('.eachLine').find('.zcdCard').removeClass('zk_zcdCard');
+            $('.eachLine').find('.zcdCard').height('260px');
+            $('.eachLine').find('.zcdCard').find('.zcdBody').height('180px');
+            $('.eachLine').find('span').removeClass('clickClose').addClass('clickOpen');
+            $('.eachLine').find('.zcdCard').css('marginBottom', 10);
+            $(this).parents('.zcdCard').height('auto');
+            $(this).parents('.zcdCard').find('.zcdBody').height('auto');
+            $(this).removeClass('clickOpen').addClass('clickClose');
+            $(this).parents('.zcdCard').addClass('zk_zcdCard');
+            if(bh<280){
+              var marginBottom = 10;
+            } else {
+              var marginBottom = -($(this).parents('.zcdCard').height()-270);
+            }
+            $(this).parents('.zk_zcdCard').css('marginBottom', marginBottom);
+          } else if(className == 'clickClose'){
+            $(this).parents('.zcdCard').removeClass('zk_zcdCard');
+            $(this).parents('.zcdCard').height('260px');
+            $(this).parents('.zcdCard').find('.zcdBody').height('180px');
+            $(this).removeClass('clickClose').addClass('clickOpen');
+            $(this).parents('.zcdCard').css('marginBottom', 10);
+          }
+        })
+      },
+      error:function(data){
+      }
+    });
+  }
+  generateToken();
+</script>
+</body>
+</html>

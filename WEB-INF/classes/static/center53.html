@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>首页 - 第一资产</title>
+<link rel="icon" href="favicon.ico" type="image/ico">
+<meta name="keywords" content="第一资产">
+<meta name="description" content="第一资产">
+<meta name="author" content="yinqi">
+<meta HTTP-EQUIV="pragma" CONTENT="no-cache">
+<meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+<meta HTTP-EQUIV="expires" CONTENT="Mon, 23 Jan 1978 20:52:30 GMT">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/materialdesignicons.min.css" rel="stylesheet">
+<link href="css/style.min.css" rel="stylesheet">
+<link href="css/animate.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1783930_hbst029w46m.css">
+</head>
+<body style="height: 90%">
+    <div class="container-fluid m-10 p-0">
+    
+      <div class="eachLine row">
+        <!-- <div class="col-sm-6 col-md-3">
+            sss
+            <div class="card zcdCard">33</div>
+        </div> -->
+
+      </div>
+      
+    </div>
+    
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/main.min.js"></script>
+<script type="text/javascript">
+  document.write('<script src="js/menu.js?' + new Date().getTime() + '"><\/script\>');
+  document.write('<script src="js/ajax.js?' + new Date().getTime() + '"><\/script\>');
+  document.write('<script src="js/common.js?' + new Date().getTime() + '"><\/script\>');
+</script>
+
+<script>
+  var mbsToken = sessionStorage.getItem('mbsToken');
+  var menuList = [
+   {
+     ht: '五个三工作系统',
+     children: [
+       {
+         name: '招标采购管理（APH1.0）',
+         url: url1_0 + 'mg/adminuser.do?method=initMenuForAph&sub=1&token='+ mbsToken,
+         qxV: ''
+       },
+     ]
+   },
+   {
+     ht: '供应商管理',
+     children: [
+       {
+         name: '供应商类别',
+         url: masterdataUrl + "supplier/getSupplierCategoryList.action",
+         qxV: 'aph2_masterData_GYSLB-QX-M10'
+       },
+       {
+         name: '服务类型',
+         url: masterdataUrl + "supplier/beforeSupplierServeCategoryList.action",
+         qxV: 'aph2_masterData_GYSFWLX-QX-M10'
+       },
+       {
+         name: '供应商信息',
+         url: masterdataUrl + 'supplier/getSupplierList.action?page=1',
+         qxV: 'aph2_masterData_GYSXX-QX-M10'
+       },
+       {
+         name: '供应商审核',
+         url: masterdataUrl + 'supplier/getSupplierVerifyList.action?page=1',
+         qxV: 'aph2_masterData_GYSSH-QX-M10'
+       }
+     ]
+   },
+   {
+     ht: '物品管理',
+     children: [
+       {
+         name: '物品类型',
+         url: masterdataUrl + 'material/beforeMdMaterialCategoryList.action',
+         qxV: 'aph2_masterData_WPLX-QX-M10'
+       },
+       {
+         name: '物品信息',
+         url: masterdataUrl + 'material/beforeMdMaterialCategoryList.action',
+         qxV: 'aph2_masterData_WPXX-QX-M10'
+       }
+     ]
+   },
+
+   {
+     ht: '招投标管理',
+     children: [
+       {
+         name: '添加专项采购小组',
+         url: tenderUrl + 'td/#/ProcurementGroupHome',
+         qxV: 'aph2_tender_ZXCGXZ-QX-M10'
+       },
+       {
+         name: '成本预算和集中/专项采购执行单制定',
+         url: tenderUrl + 'td/#/?type=ExecutionSheetHome',
+         qxV: 'aph2_tender_CGZXDZD-QX-M10'
+       },
+       {
+         name: '招标处理',
+         url: tenderUrl + 'td/#/?type=handle',
+         qxV: 'zbcl'
+       },
+       {
+         name: '招标项进展查询',
+         url: tenderUrl + 'td/#/?type=bidProgressQuery',
+         qxV: 'aph2_tender_ZBJZCX-QX-M10'
+       }
+     ]
+   }
+ ];
+
+ xrCard(menuList, $('.eachLine'));
+
+</script>
+</body>
+
+</html>
+

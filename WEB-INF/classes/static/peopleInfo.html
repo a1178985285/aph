@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>个人信息 - 第一资产</title>
+  <link rel="icon" href="favicon.ico" type="image/ico">
+  <meta name="keywords" content="第一资产">
+  <meta name="description" content="第一资产">
+  <meta name="author" content="yinqi">
+  <meta HTTP-EQUIV="pragma" CONTENT="no-cache">
+  <meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+  <meta HTTP-EQUIV="expires" CONTENT="Mon, 23 Jan 1978 20:52:30 GMT">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="css/style.min.css" rel="stylesheet">
+</head>
+<style type="text/css">
+  body {
+    background: #fff;
+  }
+.img-avatar{
+  border: 1px solid #ededed;
+}
+  .infoClass {
+    margin-top: 20px;
+    margin-left: 10px;
+  }
+
+  .infoClass label {
+    width: 80px;
+    text-align: left;
+  }
+
+  .infoClass span {
+    text-align: left;
+  }
+
+  /*.matter{
+      width: 100%;
+      height: 50px;
+    }
+    .matter a{
+      display: block;
+      width: 100%;
+      height: 100%;
+      line-height: 50px;
+      color: #fff;
+    }
+    .matter a i{
+      font-size: 30px;
+      margin-left: 40px;
+      float: left;
+    }
+    .matter a p{
+      font-size: 16px;
+      float: left;
+      margin-left: 12px;
+    }
+    .matter a span{
+      font-size: 18px;
+      float: left;
+      margin-left: 20px;
+    }*/
+  #file {
+    position: absolute;
+    top: 0px;
+    height: 100px;
+    left: 10px;
+    width: 100px;
+    opacity: 0;
+  }
+</style>
+
+<body>
+  <div class="container-fluid p-t-15">
+
+    <div class="row">
+      <div class="col-md-2.4 col-lg-2 col-sm-3" style="position: relative;">
+        <form action="" enctype="multipart/form-data" style="margin-left: 10px;">
+          <img src="" class="img-avatar" id="show">
+          <!-- <input type="file" id="file" value="" onchange="changepic(this)" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg"> -->
+        </form>
+        <!-- <img src="" class="img-avatar"> -->
+        <div class="infoClass ">
+          <p><label >姓名</label><span id="staffname"></span></p>
+          <p><label>工号</label><span id="staffnumber"></span></p>
+          <p><label>岗位</label><span id="positionname"></span></p>
+          <p><label>电话</label><span id="phone"></span></p>
+          <p><label>入职日期</label><span id="time"></span></p>
+        </div>
+      </div>
+      <div class="col-md-9.5 col-lg-10 col-sm-9 borderLeft" style="padding-left: 30px;">
+        <div class="row">
+          <!-- <div class="col-md-4">
+          <div class="matter bg-primary">
+            <a href="#">
+                <i class="mdi mdi-menu"></i>
+                <p>待办</p>
+                <span>12</span>
+              </a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="matter bg-gray">
+            <a href="#">
+                <i class="mdi mdi-menu"></i>
+                <p>流程</p>
+                <span>12</span>
+              </a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="matter bg-purple">
+            <a href="#">
+                <i class="mdi mdi-menu"></i>
+                <p>任务</p>
+                <span>12</span>
+              </a>
+          </div>
+        </div> -->
+          <div class="col-sm-8 col-md-4">
+            <div class="card bg-danger">
+              <div class="card-body clearfix">
+                <div class="pull-left"> <span class="img-avatar img-avatar-48 bg-translucent"><i
+                      class="mdi mdi-account fa-1-5x"></i></span> </div>
+                <div class="pull-left m-l-20">
+                  <p class="h6 text-white m-t-0">待办</p>
+                  <a href="javascript: void(0)" onclick="window.open(basePath + 'notice/getBsSystemNoticeList.action');" class="h3 text-white m-b-0" id="m-b-0"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-8 col-md-4">
+            <div class="card bg-success">
+              <div class="card-body clearfix">
+                <div class="pull-left"> <span class="img-avatar img-avatar-48 bg-translucent"><i
+                      class="mdi mdi-arrow-down-bold fa-1-5x"></i></span> </div>
+                <div class="pull-left m-l-20">
+                  <p class="h6 text-white m-t-0">流程</p>
+                  <a href="javascript: void(0)" onclick="window.open(approveUrl + 'approve/openApproveList.action')" class="h3 text-white m-b-0" id="m-b-1"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-8 col-md-4">
+            <div class="card bg-purple">
+              <div class="card-body clearfix">
+                <div class="pull-left"> <span class="img-avatar img-avatar-48 bg-translucent"><i
+                      class="mdi mdi-comment-outline fa-1-5x"></i></span> </div>
+                <div class="pull-left m-l-20">
+                  <p class="h6 text-white m-t-0">任务</p>
+                  <a href="javascript: void(0)" class="h3 text-white m-b-0" id="m-b-2" onclick="window.open( oa443 + 'workplan/getMyTaskListByPage.action')"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12" >
+            <div class="card m-t-5 col-sm-10 col-md-6">
+              <div class="card-header">
+                <h4>绩效信息</h4>
+              </div>
+              <div class="card-body">
+                <canvas class="js-chartjs-lines"></canvas>
+              </div>
+            </div>
+            <div class="card m-t-5 col-sm-10 col-md-6">
+              <div class="card-header">
+                <h4>考勤信息</h4>
+              </div>
+              <div class="card-body">
+                <canvas class="js-chartjs-lines2"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/main.min.js"></script>
+
+<script type="text/javascript">
+  document.write('<script src="js/ajax.js?' + new Date().getTime() + '"><\/script\>');
+</script>
+  <!--图表插件-->
+  <script type="text/javascript" src="js/Chart.js"></script>
+  <!-- 消息提示 -->
+  <script src="js/bootstrap-notify.min.js"></script>
+  <script type="text/javascript" src="js/lightyear.js"></script>
+  <script type="text/javascript">
+
+    function changepic() {
+      var reads = new FileReader();
+      f = document.getElementById('file').files[0];
+      reads.readAsDataURL(f);
+      reads.onload = function (e) {
+        axImg($('.img-avatar'), this.result, f);
+      };
+
+    }
+    // 获取信息
+    function getUsr() {
+      var obj = {
+        url: "staffInfo",
+        data: '',
+        success: function (res) {
+          var data = res.data;
+          if (res.returnCode == 0) {
+            sessionStorage.setItem('staffId', data.staffId);
+            $("#staffname").html(data.staffName)
+            $("#staffnumber").html(data.staffNumber)
+            $("#positionname").html(data.positionName)
+            $("#phone").html(data.phone)
+            $("#time").html(data.entrydateStr.substr(0, 10))
+            if(data.shPictureUrl){
+              $("#show").attr('src', data.shPictureUrl);
+              return;
+            } else if(data.shPicture){
+              $("#show").attr('src', txUrl + data.shPicture);
+              return;
+            } else {
+              
+            }
+          } else {
+            lightyear.notify(res.message, 'danger', 2000);
+          }
+        }
+      }
+      ajaxObj(obj, 'GET');
+    }
+    getUsr()
+    // 代办请求
+    function getagency() {
+      var obj = {
+        url: "getTNACount",
+        data: '',
+        success: function (res) {
+          var data = res.data;
+          if (res.returnCode == 0) {
+            for(var i in data){
+              if(data[i].TYPE == 'TASK'){
+                $("#m-b-2").html(data[i].COUNT)
+              } else if(data[i].TYPE == 'NOTICE'){
+                $("#m-b-0").html(data[i].COUNT)
+              } else if(data[i].TYPE == 'APPROVE'){
+                $("#m-b-1").html(data[i].COUNT)
+              }
+            }
+          } else {
+            lightyear.notify(res.message, 'danger', 2000);
+          }
+        }
+      }
+      ajaxObj(obj, 'GET');
+    }
+    getagency()
+
+    // 绩效信息
+    function getKpi() {
+      var dates = new Date();
+      var ye = dates.getFullYear();
+      var year = '&year=' + ye;
+      var obj = {
+        url: "getPerformance",
+        data: '',
+        success: function (res) {
+          var data = res.data;
+          var $dashChartLinesCnt = jQuery('.js-chartjs-lines')[0].getContext('2d');
+          if (res.returnCode == 0) {
+            var arr = [];
+            var arr1 = [];
+            for (var item in data) {
+              arr.push(data[item].month + '月')
+              arr1.push(data[item].value)
+            }
+            var $dashChartLinesData = {
+              labels: arr,
+              datasets: [
+                {
+                  label: '绩效分数',
+                  data: arr1,
+                  borderColor: '#358ed7',
+                  backgroundColor: 'rgba(53, 142, 215, 0.175)',
+                  borderWidth: 1,
+                  fill: false,
+                  lineTension: 0.5
+                }
+              ]
+            };
+            var myLineChart = new Chart($dashChartLinesCnt, {
+              type: 'line',
+              data: $dashChartLinesData,
+            });
+
+          } else {
+            lightyear.notify(res.message, 'danger', 2000);
+          }
+        }
+      }
+      // 绩效
+      ajaxObj(obj, 'GET', year);
+    // 考勤
+      var obj1 = {
+        url: "getAttendance",
+        data: '',
+        success: function (res) {
+          var data = res.data;
+          var $dashChartLinesCnt2 = jQuery('.js-chartjs-lines2')[0].getContext('2d');
+          if (res.returnCode == 0) {
+            var arr2 = [];
+            var arr3 = [];
+            for (var item in data) {
+              arr2.push(data[item].month + '月')
+              arr3.push(data[item].value)
+            }
+            var $dashChartLinesData2 = {
+              labels: arr2,
+              datasets: [
+                {
+                  label: '考勤信息',
+                  data: arr3,
+                  borderColor: '#ff6666',
+                  backgroundColor: 'rgba(53, 142, 215, 0.175)',
+                  borderWidth: 1,
+                  fill: false,
+                  lineTension: 0.5
+                }
+              ]
+            };
+            var myLineChart2 = new Chart($dashChartLinesCnt2, {
+              type: 'line',
+              data: $dashChartLinesData2,
+            });
+          } else {
+            lightyear.notify(res.message, 'danger', 2000);
+          }
+        }
+      }
+      ajaxObj(obj1, 'GET', year);
+    }
+    getKpi()
+
+
+    function axImg(data, imgUrl, imgFlie, staffId) {
+      var url = api.updateHeadPic + sessionStorage.getItem('sso_sessionid');
+      var staffId = sessionStorage.getItem('staffId');
+      var formdatas = new FormData();
+      formdatas.append('staffId', staffId);
+      formdatas.append("file", imgFlie);
+      $.ajax({
+        url: url,
+        async: true, //true:异步,false:同步
+        data: formdatas,
+        type: 'POST',
+        contentType: false,
+        processData: false,
+        timeout: 10 * 1000,  //请求时间 
+        success: function (res) {
+          if (res.returnCode == 0) {
+            lightyear.notify(res.message, 'success', 2000);
+            if(imgUrl){
+              data.attr('src', imgUrl);
+            } else {
+              data.attr('src', '../images/users/avatar.jpg');
+            }
+            
+          } else {
+            lightyear.notify(res.message, 'danger', 2000);
+          }
+        },
+      });
+    }
+
+
+
+
+
+  </script>
+</body>
+
+</html>

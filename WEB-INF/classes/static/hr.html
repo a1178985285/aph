@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>首页 - 第一资产</title>
+<link rel="icon" href="favicon.ico" type="image/ico">
+<meta name="keywords" content="第一资产">
+<meta name="description" content="第一资产">
+<meta name="author" content="yinqi">
+<meta HTTP-EQUIV="pragma" CONTENT="no-cache">
+<meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+<meta HTTP-EQUIV="expires" CONTENT="Mon, 23 Jan 1978 20:52:30 GMT">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/materialdesignicons.min.css" rel="stylesheet">
+<link href="css/style.min.css" rel="stylesheet">
+<link href="css/animate.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1783930_hbst029w46m.css">
+</head>
+<body style="height: 90%">
+    <div class="container-fluid m-10 p-0">
+    
+      <div class="eachLine row">
+        <!-- <div class="col-sm-6 col-md-3">
+            sss
+            <div class="card zcdCard">33</div>
+        </div> -->
+
+      </div>
+      
+    </div>
+    
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/main.min.js"></script>
+<script type="text/javascript">
+  document.write('<script src="js/menu.js?' + new Date().getTime() + '"><\/script\>');
+  document.write('<script src="js/ajax.js?' + new Date().getTime() + '"><\/script\>');
+  document.write('<script src="js/common.js?' + new Date().getTime() + '"><\/script\>');
+</script>
+<script>
+    var mbsToken = sessionStorage.getItem('mbsToken');
+    var sms = pathHeader + 'sms.firstcare.com.cn';
+ var menuList = [
+   {
+     ht: '人事管理',
+     children: [
+       {
+         name: '入职、离职、调动、外派',
+         url: hrUrl + 'personnel/getQueryMain.action?page=1',
+         qxV: 'aph2_hr_RSGL-QX-M10'
+       },
+       {
+         name: '招聘管理',
+         url: hrUrl +"reserve/getStaffReserveMain.action?page=1",
+         qxV: 'aph2_hr_ZPGL-QX-M10'
+       },
+       {
+         name: '职员信息管理',
+         url: hrUrl + 'staff/getStaffMain.action?page=1',
+         qxV: 'aph2_hr_ZYXX-QX-M10'
+       },
+       {
+         name: '职员关怀模版管理',
+         url: hrUrl + 'remind/getHmRemindTemplateList.action?page=1',
+         qxV: 'aph2_hr_RSTX-QX-M10'
+       },
+       {
+         name: '职员关怀记录',
+         url: hrUrl + 'remind/getHmRemindRecordList.action?page=1',
+         qxV: 'aph2_hr_RSTX-QX-M10'
+       },
+       {
+         name: '职员信息管理(APH1.0)',
+         url: hrUrl1 + '/adminuser.do?method=showUserOfficeInfoListForQuery0'+"&token"+mbsToken,
+         qxV: ''
+       },
+     ]
+   },
+   {
+     ht: '人力资源平台',
+     children: [
+       {
+         name: '公文管理',
+         url: basePath + "news/getNewsSystemList.action?page=1&newsSystemCO.queryType=1",
+         qxV: 'aph2_oa_TZGG-QX-M10'
+       },
+       {
+         name: '出差管理',
+         url: hrUrl + "bustrip/beforeEhrBustripHeadList.action"+"?token"+mbsToken,
+         qxV: ''
+       },
+       {
+         name: '请假管理',
+         url: hrUrl + 'vacation/getVacationList.action'+"?token"+mbsToken,
+         qxV: 'aph2_hr_KQMX-QX-M10'
+       },
+       {
+         name: '考勤管理',
+         url: hrUrl + 'attendance/getAttendanceList.action'+"?token"+mbsToken,
+         qxV: 'aph2_hr_KQSQ-QX-M10'
+       },
+       {
+         name: '绩效管理',
+         url: hrUrl + 'performance/getPerformList.action'+"?token"+mbsToken,
+         qxV: 'aph2_hr_JXLB-QX-M10'
+       },
+       {
+         name: '通讯录',
+         url: hrUrl + 'staff/getDirectoriesList.action?page=1'+"&token"+mbsToken,
+         qxV: 'aph2_hr_TXL-QX-M19'
+       },
+       {
+         name: '工资单',
+         url: hrUrl + 'wa/getWaSalaryBill.action'+"?token"+mbsToken,
+         qxV: ''
+       },
+       {
+         name: '任职评估',
+         url: hrUrl + 'jobAssess/getJobAssessList.action'+"?token"+mbsToken,
+         qxV: 'aph2_hr_RZPG-QX-M10'
+       }
+     ]
+   },
+   {
+     ht: '人力资源平台（APH1.0）',
+     children: [
+       {
+         name: '内部短信平台（APH1.0）',
+         url: hrUrl1 + '/adminuser.do?method=initMenuForAph&sub=3'+"&token"+mbsToken,
+         qxV: ''
+       },
+       {
+         name: '职位职能12级测试平台（APH1.0）',
+         url: hrUrl1 + '/adminuser.do?method=initMenuForAph&sub=3'+"&token"+mbsToken,
+         qxV: ''
+       },
+       {
+         name: '会议室预定（APH1.0）',
+         url: hrUrl1 + '/meetingRoomReserve.do?method=meetingRoomReserve2'+"&token"+mbsToken,
+         qxV: ''
+       },
+       {
+         name: '名片申请（APH1.0）',
+         url: hrUrl1 + '/visitCard.do?method=initVisitCard&RelatedSys=aph'+"&token"+mbsToken,
+         qxV: ''
+       },
+       {
+         name: '绩效管理(APH1.0)',
+         url: hrUrl1 + '/visitCard.do?method=initVisitCard&RelatedSys=aph'+"&token"+mbsToken,
+         qxV: ''
+       },
+       {
+         name: '公文管理（APH1.0）',
+         url: hrUrl1 + '/adminuser.do?method=initMenuForAph&sub=3'+"&token"+mbsToken,
+         qxV: ''
+       }
+     ]
+   },
+
+   {
+     ht: '组织信息管理',
+     children: [
+       {
+         name: '组织结构管理',
+         url: hrUrl + 'orgStructure/getOrgStructureMain.action',
+         qxV: 'aph2_hr_JG-QX-M10'
+       },
+       {
+         name: '成本中心管理',
+         url: hrUrl + 'costCenter/beforeCostCenterList.action',
+         qxV: 'aph2_hr_CBZX-QX-M10'
+       },
+       {
+         name: '四个主体关联',
+         url: hrUrl + 'rank/getRankMain.action?page=1',
+         qxV: 'aph2_hr_GLZT-QX-M10'
+       },
+       {
+         name: '岗位关联',
+         url: hrUrl + 'positionAndStaffRelation/beforeGetPositionAndStaffRelation.action?page=1',
+         qxV: 'aph2_hr_GLZY-QX-M10'
+       }
+     ]
+   },
+   {
+     ht: '职位职级信息管理',
+     children: [
+       {
+         name: '层级管理',
+         url: hrUrl + 'grade/getEhrGradeList.action?page=1',
+         qxV: 'aph2_hr_CJ-QX-M10'
+       },
+       {
+         name: '职位管理',
+         url: hrUrl + 'functionRank/getEhrFunctionRankList.action?page=1',
+         qxV: 'aph2_hr_ZJ-QX-M10'
+       },
+       {
+         name: '岗位管理',
+         url: hrUrl + 'position/getPositionMain.action?page=1',
+         qxV: 'aph2_hr_GW-QX-M10'
+       },
+       {
+         name: '四个主体管理',
+         url: hrUrl + 'rank/getRankMain.action?page=1',
+         qxV: 'aph2_hr_ZT-QX-M10'
+       },
+       {
+         name: '部门管理',
+         url: hrUrl + 'rank/getRankMain.action?page=1',
+         qxV: 'aph2_hr_BM-QX-M10'
+       }
+     ]
+   },
+   {
+     ht: '薪酬及评优管理',
+     children: [
+       {
+         name: '薪酬项管理',
+         url: hrUrl + 'wa/getWageItemList.action?page=1',
+         qxV: 'aph2_hr_XCX-QX-M10'
+       },
+       {
+         name: '薪酬变量配置',
+         url: hrUrl + 'wa/beforeWaConfigList.action?page=1',
+         qxV: 'aph2_hr_XCBLPZ-QX-M10'
+       },
+       {
+         name: '个人薪酬方案',
+         url: hrUrl + 'wa/getStaffInfoList.action?page=1',
+         qxV: 'aph2_hr_XCFA-QX-M10'
+       },
+       {
+         name: '薪酬项申请',
+         url: hrUrl + 'wa/getWaApplyHeadList.action?page=1',
+         qxV: 'aph2_hr_XCSQ-QX-M10'
+       },
+       {
+         name: '薪酬核算',
+         url: hrUrl + 'wa/getWaCheckHeadList.action?page=1',
+         qxV: 'aph2_hr_XCHS-QX-M10'
+       },
+       {
+         name: '薪酬签批',
+         url: hrUrl + 'wa/getWaCheckCommpanyHeadList.action?page=1',
+         qxV: 'aph2_hr_XCHS-QX-M10'
+       },
+       {
+         name: '薪酬调整',
+         url: hrUrl + 'wa/beforeAdjustmentBatchList.action?page=1',
+         qxV: 'aph2_hr_TXLB-QX-M10'
+       },
+       {
+         name: '奖项申请',
+         url: hrUrl + 'winAward/getWinAwardBatchList.action',
+         qxV: 'aph2_hr_HJ-QX-M10'
+       },
+       {
+         name: '评优奖项管理',
+         url: hrUrl + 'encourage/award/getAwardList.action',
+         qxV: 'aph2_hr_JX-QX-M10'
+       }
+
+     ]
+   },
+   {
+     ht: '社保管理',
+     children: [
+       {
+         name: '社保方案管理',
+         url: hrUrl + 'companyScheme/beforeCompanySchemeList.action?page=1',
+         qxV: 'aph2_hr_SBFA-QX-M10'
+       },
+       {
+         name: '个人社保方案管理',
+         url: hrUrl + 'personalScheme/beforePersonalSchemeList.action?page=1',
+         qxV: 'aph2_hr_GRSB-QX-M10'
+       },
+       {
+         name: '五险一金台账管理',
+         url: hrUrl + 'ledger/beforeLedgerList.action?page=1',
+         qxV: 'aph2_hr_WXYJ-QX-M10'
+       }
+     ]
+   },
+   {
+     ht: '短信平台管理',
+     children: [
+       {
+         name: '短信平台管理',
+         url: sms + '/message/beforeSend.action',
+         qxV: 'aph2_sms_FSDXGL-QX-C11'
+       }
+     ]
+   }
+ ];
+
+ xrCard(menuList, $('.eachLine'));
+
+ function generateToken(){
+   var token = "";
+   $.ajax({
+     type: "post",
+     url: basePath+"generateToken.action",
+     cache: false,
+     async:false,
+     dataType:"json",
+     success: function(data){
+       token = data.token;
+     },
+     error:function(data){
+     }
+   });
+   return token;
+ }
+ var crmToken = generateToken();
+</script>
+</body>
+
+</html>
+

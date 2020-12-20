@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>修改密码 - 第一资产</title>
+<link rel="icon" href="favicon.ico" type="image/ico">
+<meta name="keywords" content="第一资产">
+<meta name="description" content="第一资产">
+<meta name="author" content="yinqi">
+<meta HTTP-EQUIV="pragma" CONTENT="no-cache">
+<meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+<meta HTTP-EQUIV="expires" CONTENT="Mon, 23 Jan 1978 20:52:30 GMT">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/materialdesignicons.min.css" rel="stylesheet">
+<link href="css/style.min.css" rel="stylesheet">
+</head>
+  
+<body>
+<div class="container-fluid p-t-15">
+  
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          
+          <form method="post" id='form1' class="site-form">
+            <div class="form-group">
+              <label for="old-password">旧密码</label>
+              <input type="password" class="form-control" name="oldpwd" id="old-password" placeholder="输入账号的原登录密码">
+            </div>
+            <div class="form-group">
+              <label for="new-password">新密码</label>
+              <input type="password" class="form-control" value="" name="newpwd" id="new-password"
+                placeholder="输入新的密码">
+            </div>
+            <div class="form-group">
+              <label for="confirm-password">确认新密码</label>
+              <input type="password" class="form-control" name="confirmpwd" id="confirm-password"
+                placeholder="请确认输入密码">
+            </div>
+            <button type="submit" class="btn btn-primary" id="buttonT">修改密码</button>
+          </form>
+
+
+ 
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  
+</div>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/main.min.js"></script>
+
+<script type="text/javascript">
+  document.write('<script src="js/ajax.js?' + new Date().getTime() + '"><\/script\>');
+</script>
+<script src="js/bootstrap-notify.min.js"></script>
+<script type="text/javascript" src="js/lightyear.js"></script>
+<script type="text/javascript">
+  $("#buttonT").click(function () {
+      event.preventDefault()
+      var data = {};
+      var t = $('#form1').serializeArray();
+      $.each(t, function () {
+        data[this.name] = this.value;
+      });
+      console.log();
+      modAdmin(data)
+    })
+  function modAdmin(Npassword){
+    console.log(Npassword)
+    if(Npassword.newpwd!=Npassword.confirmpwd){
+    lightyear.notify("两次密码不一样", 'danger', 2000);
+    }else if(Npassword.newpwd=="" && Npassword.confirmpwd=='' &&Npassword.oldpwd=='' ){
+    lightyear.notify("请全部输入", 'danger', 2000);  
+    }else{
+    let  url=api.pawEdit+sessionStorage.getItem('sso_sessionid')+'&'+'oldPaw'+'='+Npassword.oldpwd+'&'+'newPaw'+'='+Npassword.confirmpwd;
+    $.ajax({ 
+      url: url,
+      dataType: "json",
+      async: false, 
+      type: 'POST',
+      contentType: "application/json;charset=UTF-8",
+      timeout:10*1000,  //请求时间 
+      success: function(res){
+        if(res.returnCode == 0){
+          lightyear.notify(res.message, 'success', 2000);
+        }else{
+          lightyear.notify(res.message, 'danger', 2000);
+        }
+      }, //请求成功
+      error: function(xhr,status,error) {
+        console.log(xhr,status,error);
+        console.log("请求错误")
+      }
+    });
+
+    }
+  }
+
+</script>
+</body>
+</html>

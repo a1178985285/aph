@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>首页 - 第一资产</title>
+<link rel="icon" href="favicon.ico" type="image/ico">
+<meta name="keywords" content="第一资产">
+<meta name="description" content="第一资产">
+<meta name="author" content="yinqi">
+<meta HTTP-EQUIV="pragma" CONTENT="no-cache">
+<meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+<meta HTTP-EQUIV="expires" CONTENT="Mon, 23 Jan 1978 20:52:30 GMT">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/materialdesignicons.min.css" rel="stylesheet">
+<link href="css/style.min.css" rel="stylesheet">
+<link href="css/animate.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1783930_hbst029w46m.css">
+</head>
+  
+<body style="height: 90%">
+<div class="container-fluid m-10 p-0">
+
+  <div class="eachLine row">
+    
+  </div>
+  
+</div>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/main.min.js"></script>
+
+<script type="text/javascript">
+  document.write('<script src="js/menu.js?' + new Date().getTime() + '"><\/script\>');
+  document.write('<script src="js/ajax.js?' + new Date().getTime() + '"><\/script\>');
+  document.write('<script src="js/common.js?' + new Date().getTime() + '"><\/script\>');
+</script>
+<script type="text/javascript">
+  // var 
+  var mbsToken = sessionStorage.getItem('mbsToken');
+  var menuList = [
+    {
+      ht: '基础数据',
+      children: [
+        {
+          name: '项目类型',
+          url: chargeUrl + 'projectType/toList.action',
+          qxV: 'aph2_charge_SFXMLX-QX-M10'
+        },
+        {
+          name: '收费项目',
+          url: chargeUrl + 'item/itemList.action?status=Y',
+          qxV: 'aph2_charge_SFXM-QX-M10'
+        },
+        {
+          name: '减免类型',
+          url: chargeUrl + 'reduction/toList.action',
+          qxV: 'aph2_charge_SFJMLX-QX-M10'
+        },
+        {
+          name: '收费表管理',
+          url: chargeUrl + 'feemeter/feemeterList.action',
+          qxV: 'aph2_charge_SFBGL-QX-M10'
+        },
+        {
+          name: '缴纳通知单',
+          url: chargeUrl + 'paynotice/paynoticeList.action',
+          qxV: 'aph2_charge_JNTZD-QX-M10'
+        },
+        {
+          name: '发票管理',
+          url: chargeUrl + 'bill/toList.action',
+          qxV: 'aph2_charge_FPGL-QX-M10'
+        },
+        {
+          name: '外协单位管理',
+          url: chargeUrl + 'company/beforeEditMdCompanyCustomerCoUnit.action',
+          qxV: 'aph2_charge_WXDW-QX-M10'
+        },
+      ]
+    },
+    {
+      ht: '应收管理',
+      children: [
+        {
+          name: '应收管理',
+          url: chargeUrl + 'receivable/receivableList.action',
+          qxV: 'aph2_charge_YSGL-QX-M10'
+        },
+        {
+          name: '减免管理',
+          url: chargeUrl + 'itemFees/beforeItemFeesList.action',
+          qxV: 'aph2_charge_SFJMGL-QX-M10'
+        },
+        {
+          name: '用户抄表',
+          url: chargeUrl + 'meter/meterList.action',
+          qxV: 'aph2_charge_SFYHCB-QX-M10'
+        },
+      ]
+    },
+    {
+      ht: '实收管理',
+      children: [
+        {
+          name: '实收管理',
+          url: chargeUrl + 'receipts/receiptsList.action',
+          qxV: 'aph2_charge_SFSSGL-QX-M10'
+        },
+        {
+          name: '收款单列表',
+          url: chargeUrl + 'realitycharge/beforeRealitychargeList.action',
+          qxV: 'aph2_charge_SFSKDLB-QX-M10'
+        },
+        {
+          name: '日报列表',
+          url: chargeUrl + 'daily/dailyList.action',
+          qxV: 'aph2_charge_SFRBLB-QX-M10'
+        },
+      ]
+    },
+    {
+      ht: '报表管理',
+      children: [
+        {
+          name: '分摊报表',
+          url: chargeUrl + 'report/shareReport.action',
+          qxV: 'aph2_charge_SFBBGL-QX-M10'
+        },
+        {
+          name: '分摊（按月）报表',
+          url: chargeUrl + 'report/shareReportMonth.action',
+          qxV: 'aph2_charge_SFBBGL-QX-M10'
+        },
+        {
+          name: '欠费期间统计表',
+          url: chargeUrl + 'report/arrearagePeriodReport.action',
+          qxV: 'aph2_charge_SFBBGL-QX-M10'
+        },
+        {
+          name: '应收挂账统计表',
+          url: chargeUrl + 'report/receivableReport.action',
+          qxV: 'aph2_charge_SFBBGL-QX-M10'
+        },
+        {
+          name: '欠费按月统计表',
+          url: chargeUrl + 'report/beforeArrearageMonthReport.action',
+          qxV: 'aph2_charge_SFBBGL-QX-M10'
+        },
+      ]
+    },
+    {
+      ht: '科技设施专业',
+      children: [
+        {
+          name: '设施设备维保信息管理（APH1.0）',
+          url: url1_0 + 'mg/adminuser.do?method=initMenuForAph&menu=DiYiWuYe&token=' + mbsToken,
+          qxV: ''
+        },
+        {
+          name: '设施管理工程数据管理（APH1.0）',
+          url: url1_0 + 'mg/adminuser.do?method=initMenuForAph&menu=DiYiWuYe&token=' + mbsToken,
+          qxV: ''
+        },
+      ]
+    },
+    {
+      ht: '工程缺陷反馈管理(MBS1.0)',
+      children: [
+        {
+          name: '缺陷反馈添加',
+          url: url1_0 + 'mg/productflaw.do?method=initAddProductFlaw&pdId=0&add=add&token=' + mbsToken,
+          qxV: ''
+        },
+        {
+          name: '缺陷反馈数据评估',
+          url: url1_0 + 'mg/productFlawRpt.do?method=showProductFlaw&token=' + mbsToken,
+          qxV: ''
+        },
+        {
+          name: '缺陷反馈图集',
+          url: url1_0 + 'mg/documentManage.do?method=showdata&knowCom=MG&id=5201&token=' + mbsToken,
+          qxV: ''
+        },
+      ]
+    },
+    {
+      ht: '工程图纸资料管理(MBS1.0)',
+      children: [
+        {
+          name: '图纸资料',
+          url: url1_0 + 'mg/documentManage.do?method=showLibraryList&knowCom=FC&dmId=8595&token=' + mbsToken,
+          qxV: ''
+        },
+        {
+          name: '图纸文件查询',
+          url: url1_0 + 'mg/drawingFile.do?method=searchFile&token=' + mbsToken,
+          qxV: ''
+        },
+        {
+          name: '项目公司旧图纸资料',
+          url: url1_0 + 'mg/documentManage.do?method=showLibraryList&dmId=5213&token=' + mbsToken,
+          qxV: ''
+        },
+      ]
+    },
+    {
+      ht: '成保维保技术管理(MBS1.0)',
+      children: [
+        {
+          name: '国家及地方性规范、规程',
+          url: url1_0 + 'mg/documentManage.do?method=showLibraryList&dmId=4374&token=' + mbsToken,
+          qxV: ''
+        },
+        {
+          name: '作业标准说明',
+          url: url1_0 + 'mg/fileCategory.do?method=displayOperationStandardList&currMajor=3&token=' + mbsToken,
+          qxV: ''
+        },
+        {
+          name: '标准化产品线图集',
+          url: url1_0 + 'mg/documentManage.do?method=showLibraryList&dmId=4265&token=' + mbsToken,
+          qxV: ''
+        },
+        {
+          name: '标准化技术要求和管理要求',
+          url: url1_0 + 'mg/fileCategory.do?method=displayETList&token=' + mbsToken,
+          qxV: ''
+        },
+      ]
+    },
+    {
+      ht: '里程碑执行表管理',
+      children: [
+        {
+          name: '第一物业内部项目',
+          url: '#!',
+          qxV: '',
+          secondTitle: true
+        },
+        {
+          name: '一级流程与标准化节点状态',
+          url: oa443 + 'workplan/getProjectFirstList.action?queryType=1&reportCO.dutyMajor=first_WY',
+          qxV: ''
+        },
+        {
+          name: '二级流程与标准化节点状态',
+          url: oa443 + 'workplan/getProjectSecondList.action?queryType=1&reportCO.dutyMajor=first_WY',
+          qxV: ''
+        },
+        {
+          name: '里程碑执行表执行得分',
+          url: oa443 + 'workplan/getProjectReportList.action?queryType=1&reportCO.dutyMajor=first_WY',
+          qxV: ''
+        },
+        {
+          name: '里程碑执行表列表',
+          url: oa443 + 'workplan/getMilepostProjectListByPage.action?queryType=1&reportCO.dutyMajor=first_WY',
+          qxV: ''
+        },
+        {
+          name: '成果文件模版管理',
+          url: oa443 + 'workplan/getTemplateList.action?queryType=1&reportCO.dutyMajor=first_WY',
+          qxV: 'aph2_oa_LCBMB-QX-M10'
+        },
+        {
+          name: '独立主体管理',
+          url: '',
+          qxV: 'shuidoumeiyouquanxian-zhanshi'
+        },
+        {
+          name: '旧版里程碑执行表管理（APH1.0）',
+          url: url1_0 + 'mg/adminuser.do?method=initMenuForAph&menu=DiYiWuYe&token=' + mbsToken,
+          qxV: ''
+        },
+        {
+          name: '第一物业外部项目（业委会委托）',
+          url: '#!',
+          qxV: '',
+          secondTitle: true
+        },
+        {
+          name: '一级流程与标准化节点状态',
+          url: oa443 + 'workplan/getProjectFirstList.action?queryType=1&reportCO.dutyMajor=first_WY',
+          qxV: ''
+        },
+        {
+          name: '二级流程与标准化节点状态',
+          url: oa443 + 'workplan/getProjectSecondList.action?queryType=1&reportCO.dutyMajor=first_WY',
+          qxV: ''
+        },
+        {
+          name: '里程碑执行表执行得分',
+          url: oa443 + 'workplan/getProjectReportList.action?queryType=1&reportCO.dutyMajor=first_WY',
+          qxV: ''
+        },
+        {
+          name: '里程碑执行表列表',
+          url: oa443 + 'workplan/getMilepostProjectListByPage.action?queryType=1&reportCO.dutyMajor=first_WY',
+          qxV: ''
+        },
+        {
+          name: '成果文件模版管理',
+          url: oa443 + 'workplan/getTemplateList.action?queryType=1&reportCO.dutyMajor=first_WY',
+          qxV: 'aph2_oa_LCBMB-QX-M10'
+        },
+        {
+          name: '第一物业外部项目（对外开发商）',
+          url: '#!',
+          qxV: '',
+          secondTitle: true
+        },
+        {
+          name: '一级流程与标准化节点状态',
+          url: oa443 + 'workplan/getProjectFirstList.action?queryType=1&reportCO.dutyMajor=first_WY',
+          qxV: ''
+        },
+        {
+          name: '二级流程与标准化节点状态',
+          url: oa443 + 'workplan/getProjectSecondList.action?queryType=1&reportCO.dutyMajor=first_WY',
+          qxV: ''
+        },
+        {
+          name: '里程碑执行表执行得分',
+          url: oa443 + 'workplan/getProjectReportList.action?queryType=1&reportCO.dutyMajor=first_WY',
+          qxV: ''
+        },
+        {
+          name: '里程碑执行表列表',
+          url: oa443 + 'workplan/getMilepostProjectListByPage.action?queryType=1&reportCO.dutyMajor=first_WY',
+          qxV: ''
+        },
+        {
+          name: '成果文件模版管理',
+          url: oa443 + 'workplan/getTemplateList.action?queryType=1&reportCO.dutyMajor=first_WY',
+          qxV: 'aph2_oa_LCBMB-QX-M10'
+        },
+
+        {
+          name: '第一物业外部项目（顾问）',
+          url: '#!',
+          qxV: '',
+          secondTitle: true
+        },
+        {
+          name: '一级流程与标准化节点状态',
+          url: oa443 + 'workplan/getProjectFirstList.action?queryType=1&reportCO.dutyMajor=first_WY',
+          qxV: ''
+        },
+        {
+          name: '二级流程与标准化节点状态',
+          url: oa443 + 'workplan/getProjectSecondList.action?queryType=1&reportCO.dutyMajor=first_WY',
+          qxV: ''
+        },
+        {
+          name: '里程碑执行表执行得分',
+          url: oa443 + 'workplan/getProjectReportList.action?queryType=1&reportCO.dutyMajor=first_WY',
+          qxV: ''
+        },
+        {
+          name: '里程碑执行表列表',
+          url: oa443 + 'workplan/getMilepostProjectListByPage.action?queryType=1&reportCO.dutyMajor=first_WY',
+          qxV: ''
+        },
+        {
+          name: '成果文件模版管理',
+          url: oa443 + 'workplan/getTemplateList.action?queryType=1&reportCO.dutyMajor=first_WY',
+          qxV: 'aph2_oa_LCBMB-QX-M10'
+        },
+
+        {
+          name: '第一物业外部项目（股权收并购商）',
+          url: '#!',
+          qxV: '',
+          secondTitle: true
+        },
+        {
+          name: '一级流程与标准化节点状态',
+          url: oa443 + 'workplan/getProjectFirstList.action?queryType=1&reportCO.dutyMajor=first_WY',
+          qxV: ''
+        },
+        {
+          name: '二级流程与标准化节点状态',
+          url: oa443 + 'workplan/getProjectSecondList.action?queryType=1&reportCO.dutyMajor=first_WY',
+          qxV: ''
+        },
+        {
+          name: '里程碑执行表执行得分',
+          url: oa443 + 'workplan/getProjectReportList.action?queryType=1&reportCO.dutyMajor=first_WY',
+          qxV: ''
+        },
+        {
+          name: '里程碑执行表列表',
+          url: oa443 + 'workplan/getMilepostProjectListByPage.action?queryType=1&reportCO.dutyMajor=first_WY',
+          qxV: ''
+        },
+        {
+          name: '成果文件模版管理',
+          url: oa443 + 'workplan/getTemplateList.action?queryType=1&reportCO.dutyMajor=first_WY',
+          qxV: 'aph2_oa_LCBMB-QX-M10'
+        },
+      ]
+    }
+  ];
+
+  
+  xrCard(menuList, $('.eachLine'));
+
+
+</script>
+</body>
+</html>

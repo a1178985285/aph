@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>首页 - 第一资产</title>
+<link rel="icon" href="favicon.ico" type="image/ico">
+<meta name="keywords" content="第一资产">
+<meta name="description" content="第一资产">
+<meta name="author" content="yinqi">
+<meta HTTP-EQUIV="pragma" CONTENT="no-cache">
+<meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+<meta HTTP-EQUIV="expires" CONTENT="Mon, 23 Jan 1978 20:52:30 GMT">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/materialdesignicons.min.css" rel="stylesheet">
+<link href="css/style.min.css" rel="stylesheet">
+<link href="css/animate.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1783930_hbst029w46m.css">
+</head>
+  
+<body style="height: 90%">
+<div class="container-fluid m-10 p-0">
+
+  <div class="eachLine row">
+    
+  </div>
+  
+</div>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/main.min.js"></script>
+
+<script type="text/javascript">
+  document.write('<script src="js/menu.js?' + new Date().getTime() + '"><\/script\>');
+  document.write('<script src="js/ajax.js?' + new Date().getTime() + '"><\/script\>');
+  document.write('<script src="js/common.js?' + new Date().getTime() + '"><\/script\>');
+</script>
+<script type="text/javascript">
+  // var 
+  var mbsToken = sessionStorage.getItem('mbsToken');
+  var menuList = [
+    {
+      ht: '里程碑执行表管理',
+      children: [
+        {
+          name: '一级流程与标准化节点状态',
+          url: oa443 + 'workplan/getProjectFirstList.action?queryType=1&reportCO.dutyMajor=first_MFKT',
+          qxV: ''
+        },
+        {
+          name: '二级流程与标准化节点状态',
+          url: oa443 + 'workplan/getProjectSecondList.action?queryType=1&reportCO.dutyMajor=first_MFKT',
+          qxV: ''
+        },
+        {
+          name: '里程碑执行表执行得分',
+          url: oa443 + 'workplan/getProjectReportList.action?queryType=1&reportCO.dutyMajor=first_MFKT',
+          qxV: ''
+        },
+        {
+          name: '里程碑执行表列表',
+          url: oa443 + 'workplan/getMilepostProjectListByPage.action?queryType=1&reportCO.dutyMajor=first_MFKT',
+          qxV: ''
+        },
+        {
+          name: '成果文件模版管理',
+          url: oa443 + 'workplan/getTemplateList.action?queryType=1&reportCO.dutyMajor=first_MFKT',
+          qxV: 'aph2_oa_LCBMB-QX-M10'
+        },
+        {
+          name: '独立主体管理',
+          url: '',
+          qxV: 'shuidoumeiyouquanxian-zhanshi'
+        },
+        {
+          name: '旧版里程碑执行表管理（APH1.0）',
+          url: url1_0 + 'mg/adminuser.do?method=initMenuForAph&menu=DiYiJiaoYu&token=' + mbsToken,
+          qxV: ''
+        }
+      ]
+    }
+  ];
+
+  
+  xrCard(menuList, $('.eachLine'));
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>首页 - 第一资产</title>
+<link rel="icon" href="favicon.ico" type="image/ico">
+<meta name="keywords" content="第一资产">
+<meta name="description" content="第一资产">
+<meta name="author" content="yinqi">
+<meta HTTP-EQUIV="pragma" CONTENT="no-cache">
+<meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+<meta HTTP-EQUIV="expires" CONTENT="Mon, 23 Jan 1978 20:52:30 GMT">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/materialdesignicons.min.css" rel="stylesheet">
+<link href="css/style.min.css" rel="stylesheet">
+<link href="css/animate.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1783930_hbst029w46m.css">
+</head>
+<body style="height: 90%">
+    <div class="container-fluid m-10 p-0">
+    
+      <div class="eachLine row">
+        <!-- <div class="col-sm-6 col-md-3">
+            sss
+            <div class="card zcdCard">33</div>
+        </div> -->
+
+      </div>
+      
+    </div>
+    
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/main.min.js"></script>
+<script type="text/javascript">
+  document.write('<script src="js/menu.js?' + new Date().getTime() + '"><\/script\>');
+  document.write('<script src="js/ajax.js?' + new Date().getTime() + '"><\/script\>');
+  document.write('<script src="js/common.js?' + new Date().getTime() + '"><\/script\>');
+</script>
+<script>
+    var mbsToken = sessionStorage.getItem('mbsToken');
+    console.log(url1_0)
+ var menuList = [
+   {
+     ht: '报销借款还款',
+     children: [
+       {
+         name: '报销申请',
+         url: financemanageU + 'expense/beforeErExpenseEdit.action?update=true',
+         qxV: 'aph2_financeManage_BXGL-QX-C11'
+       },
+       {
+         name: '报销列表',
+         url: financemanageU + 'expense/beforeErExpenseHeadList.action',
+         qxV: 'aph2_financeManage_BXGL-QX-M10'
+       },
+       {
+         name: '借款申请',
+         url: financemanageU + 'loan/beforeErLoanEdit.action?update=true',
+         qxV: 'aph2_financeManage_JKGL-QX-C11'
+       },
+       {
+         name: '借款列表',
+         url: financemanageU + 'loan/beforeErLoanHeadList.action',
+         qxV: 'aph2_financeManage_JKGL-QX-M10'
+       },
+       {
+         name: '还款申请',
+         url: financemanageU + 'repayment/beforeErRepaymentEdit.action?update=true',
+         qxV: 'aph2_financeManage_HKGL-QX-C11'
+       },
+       {
+         name: '还款列表',
+         url: financemanageU + 'repayment/beforeErRepaymentList.action',
+         qxV: 'aph2_financeManage_HKGL-QX-M10'
+       },
+     ]
+   },
+   {
+     ht: '付款合同',
+     children: [
+       {
+         name: '合同审定',
+         url: contractUrl + "po/beforePoHeadList.action",
+         qxV: 'aph2_contract_HTFKLB-QX-M10'
+       },
+       {
+         name: '合同变更',
+         url: contractUrl + "po/beforePoHeadMList.action",
+         qxV: 'aph2_contract_HTFKBG-QX-M10'
+       },
+       {
+         name: '合同付款',
+         url: contractUrl + 'payment/beforePoPayHeadList.action',
+         qxV: 'aph2_contract_HTFKSQ-QX-M10'
+       },
+       {
+         name: '合同结算',
+         url: contractUrl + 'payment/beforePoSettleHeadList.action',
+         qxV: 'aph2_contract_HTFKJS-QX-M10'
+       },
+       {
+         name: '成本分摊',
+         url: contractUrl + 'poso/queryCAList.action?costAssignmentCO.costAssignmentType=1',
+         qxV: 'aph2_contract_HTCBFT-QX-M10'
+       }
+     ]
+   },
+   {
+     ht: '收款合同',
+     children: [
+       {
+         name: '合同审定',
+         url: contractUrl + 'so/beforeSoHeadList.action',
+         qxV: 'aph2_contract_HTSKLB-QX-M10'
+       },
+       {
+         name: '合同变更',
+         url: contractUrl + 'so/beforeSoHeadMList.action',
+         qxV: 'aph2_contract_HTSKBG-QX-M10'
+       },
+       {
+         name: '合同收款',
+         url: contractUrl + 'receive/beforeSoReceiptHeadList.action',
+         qxV: 'aph2_contract_HTSKSQ-QX-M10'
+       },
+       {
+         name: '合同结算',
+         url: contractUrl + 'receive/beforeSoSettleHeadList.action',
+         qxV: 'aph2_contract_HTSKJS-QX-M10'
+       },
+       {
+         name: '成本分摊',
+         url: contractUrl + 'poso/queryCAList.action?costAssignmentCO.costAssignmentType=2',
+         qxV: 'aph2_contract_HTSRFT-QX-M10'
+       }
+     ]
+   },
+
+   {
+     ht: '收入支出凭单',
+     children: [
+       {
+         name: '收入凭单',
+         url: contractUrl + 'receipt/beforeEditReceiptHead.action',
+         qxV: 'aph2_financeManage_SKGL-QX-C11'
+       },
+       {
+         name: '收入凭单列表',
+         url: contractUrl + 'receipt/beforeReceiptHeadList.action',
+         qxV: 'aph2_financeManage_SKGL-QX-M10'
+       },
+       {
+         name: '支出凭单',
+         url: contractUrl + 'pay/beforeEditPayHead.action',
+         qxV: 'aph2_financeManage_FKGL-QX-C11'
+       },
+       {
+         name: '支出凭单列表',
+         url: contractUrl + 'pay/beforePayHeadList.action',
+         qxV: 'aph2_financeManage_FKGL-QX-M10'
+       },
+       {
+         name: '项目管理',
+         url: contractUrl + 'setting/queryCostItemList.action',
+         qxV: 'aph2_contract_HTXMGL-QX-M10'
+       }
+     ]
+   },
+   {
+     ht: '出纳管理',
+     children: [
+       {
+         name: '账套管理',
+         url: fundUrl + 'fundAccountBook/beforeFundAccountBookList.action',
+         qxV: 'aph2_fund_ZTGL-QX-M10'
+       },
+       {
+         name: '现金日记账',
+         url: fundUrl + 'fundLedger/getFundLedgerList.action?fundLedgerCO.accountType=cash',
+         qxV: 'aph2_fund_XJRJZ-QX-M10'
+       },
+       {
+         name: '银行日记账',
+         url: fundUrl + 'fundLedger/getFundLedgerList.action?fundLedgerCO.accountType=bank',
+         qxV: 'aph2_fund_YHRJZ-QX-M10'
+       },
+       {
+         name: '账户管理',
+         url: fundUrl + 'fundAccount/beforeFundAccountList.action',
+         qxV: 'aph2_fund_ZHGL-QX-M10'
+       },
+       {
+         name: '支票管理',
+         url: fundUrl + 'bill/beforeBillHeadList.action?page=1&billHeadCO.billType=check',
+         qxV: 'aph2_fund_ZPGL-QX-M10'
+       }
+     ]
+   },
+   {
+     ht: '收付款确认',
+     children: [
+       {
+         name: '其他收款确认',
+         url: fundUrl + 'confirm/beforeReceivingInfoList.action?page=1&receivingTypeSearch=RECEIPT',
+         qxV: 'aph2_fund_QTSKQR-QX-M10'
+       },
+       {
+         name: '其他付款确认',
+         url: fundUrl + 'confirm/beforeReceivingInfoList.action?page=1&receivingTypeSearch=PAY',
+         qxV: 'aph2_fund_QTFKQR-QX-M10'
+       },
+       {
+         name: '借款/报销/还款确认',
+         url: fundUrl + 'confirm/beforeConfirmInfoList.action?page=1',
+         qxV: 'aph2_fund_JKBXHKQR-QX-M10'
+       },
+       {
+         name: '往来款确认',
+         url: fundUrl + 'confirm/beforeReceivingInfoList.action?page=1&receivingTypeSearch=INTERCOURSE',
+         qxV: 'aph2_fund_WLKQR-QX-M10'
+       }
+     ]
+   },
+   {
+     ht: '合同收付款确认',
+     children: [
+       {
+         name: '合同收款确认',
+         url: fundUrl + 'confirm/beforeContractInfoList.action?page=1&confirmType=RECEIVE',
+         qxV: 'aph2_fund_HTSKQR-QX-M10'
+       },
+       {
+         name: '合同付款确认',
+         url: fundUrl + 'confirm/beforeContractInfoList.action?page=1&confirmType=PAYMENT',
+         qxV: 'aph2_fund_HTFKQR-QX-M10'
+       }
+     ]
+   },
+   {
+     ht: '中台应付',
+     children: [
+       {
+         name: '发票&付款',
+         url: transferUrl + 'invoice/toInvoiceList.action',
+         qxV: 'aph2_transfer_ZTFK-QX-M10'
+       },
+       {
+         name: '总账',
+         url: transferUrl + 'ledger/toLedgerList.action',
+         qxV: 'aph2_transfer_ZTZZ-QX-M10'
+       },
+       {
+         name: '应收',
+         url: transferUrl + 'receivable/toReceivableList.action',
+         qxV: 'aph2_transfer_ZTYS-QX-M10'
+       },
+       {
+         name: '实收',
+         url: transferUrl + 'receipt/toReceiptList.action',
+         qxV: 'aph2_transfer_ZTSS-QX-M10'
+       },
+       {
+         name: '分摊',
+         url: transferUrl + 'allocation/toAllocationList.action',
+         qxV: 'aph2_transfer_ZTFT-QX-M10'
+       },  
+        {
+         name: '分摊(爱助家)',
+         url: transferUrl + 'allocation/toAllocationHeadList.action',
+         qxV: 'aph2_transfer_ZTFT-QX-M10'
+       },
+       {
+         name: '合同类型与发票科目',
+         url: transferUrl + 'install/toContractSubjectList.action',
+         qxV: 'aph2_transfer_ZTHTLXYKM-QX-M10'
+       },
+       {
+         name: '总账类型',
+         url: transferUrl + 'install/toPayTypeList.action',
+         qxV: 'aph2_transfer_ZTHTLXYKM-QX-M10'
+       },
+       {
+         name: '科目范围配置',
+         url: transferUrl + 'install/toSubjectScopeList.action',
+         qxV: 'aph2_transfer_ZTHTLXYKM-QX-M10'
+       },
+       {
+         name: '总账取数逻辑配置',
+         url: transferUrl + 'install/toPayConfigList.action',
+         qxV: 'aph2_transfer_ZTHTLXYKM-QX-M10'
+       },
+       {
+         name: '收入取数逻辑配置',
+         url: transferUrl + 'install/toReceiveConfigList.action',
+         qxV: 'aph2_transfer_ZTHTLXYKM-QX-M10'
+       }
+     ]
+   },
+   {
+     ht: '预算设置',
+     children: [
+       {
+         name: '预算表分类',
+         url: budgetUrl + 'setting/getSubjectCategoryList.action',
+         qxV: 'aph2_budget_YSBFL-QX-M10'
+       },
+       {
+         name: '科目组',
+         url: budgetUrl + 'setting/getSubjectGroupList.action',
+         qxV: 'aph2_budget_KMZ-QX-M10'
+       },
+       {
+         name: '控制策略',
+         url: budgetUrl + 'setting/getBudgetStrategyList.action',
+         qxV: 'aph2_budget_KZCL-QX-M10'
+       },
+       {
+         name: '预算模板',
+         url: budgetUrl + 'setting/getBudgetTemplateList.action',
+         qxV: 'aph2_budget_YSMB-QX-M10'
+       },
+       {
+         name: '预算关联',
+         url: budgetUrl + 'setting/getBudgetRelatedList.action',
+         qxV: 'aph2_budget_YSGL-QX-M10'
+       }
+     ]
+   },
+   {
+     ht: '预算制定',
+     children: [
+       {
+         name: '预算编制',
+         url: budgetUrl + 'budgetManager/getBudgetHeadListByPage.action',
+         qxV: 'aph2_budget_YSBZ-QX-M10'
+       },
+       {
+         name: '预算审定',
+         url: budgetUrl + 'budgetManager/getBudgetHeadApproveByPage.action',
+         qxV: 'aph2_budget_YSSD-QX-M10'
+       },
+       {
+         name: '预算调整',
+         url: budgetUrl + 'budgetManager/getBudgetChangeHeadListByPage.action',
+         qxV: 'aph2_budget_YSTZ-QX-M10'
+       }
+     ]
+   },
+   {
+     ht: '预算执行',
+     children: [
+       {
+         name: '计划预算执行评估-现金口径',
+         url: budgetUrl + 'execute/getBudgetExecuteComparedList.action',
+         qxV: 'aph2_budget_YSZX-QX-M10'
+       },
+       {
+         name: '计划预算执行评估-经营口径',
+         url: budgetUrl + 'execute/getBudgetAccrualExecuteComparedList.action',
+         qxV: 'aph2_budget_JYYS-QX-M10'
+       },
+       {
+         name: '计划预算执行评估-经营指标',
+         url: budgetUrl + 'budgetKpi/getBudgetKpiReportList.action',
+         qxV: 'aph2_budget_JYZB-QX-M10'
+       },
+       {
+         name: '执行、占用、释放数据查询-现金口径',
+         url: budgetUrl + 'execute/getBudgetExecuteList.action',
+         qxV: 'aph2_budget_YSZX-QX-M10'
+       },
+       {
+         name: '执行调整数据查询',
+         url: budgetUrl + 'execute/getExecuteChangeList.action',
+         qxV: 'aph2_budget_ZXTZ-QX-M10'
+       }
+     ]
+   },
+   {
+     ht: '数据填报',
+     children: [
+       {
+         name: '经营指标、经营提示',
+         url: budgetUrl + 'budgetKpi/getBudgetKpiHeadList.action',
+         qxV: 'aph2_budget_JYZBTS-QX-M10'
+       },
+       {
+         name: '执行数据调整',
+         url: budgetUrl + 'execute/getbudgetAccrualExecuteChengeList.action',
+         qxV: 'aph2_budget_JYYSTZ-QX-M10'
+       },
+       {
+         name: '经营指标配置',
+         url: budgetUrl + 'budgetKpi/getBudgetKpiSettingList.action',
+         qxV: 'aph2_budget_JYZB-QX-M10'
+       }
+     ]
+   },
+   {
+     ht: '法务风险事件管理',
+     children: [
+       {
+         name: '添加风险事件',
+         url: hrUrl1 + '/aphRiskEvent.do?method=initEv&type=AphRiskEvent',
+         qxV: ''
+       },
+       {
+         name: '添加诉讼案件',
+         url: hrUrl1 + '/aphRiskEvent.do?method=initEv&type=AphLawsuits',
+         qxV: ''
+       },
+       {
+         name: '风险事件流程查询',
+         url: hrUrl1 + '/aphRiskEvent.do?method=findAphFlowAndOperationList&foType=AphRiskEvent',
+         qxV:''
+       },
+       {
+         name: '诉讼案件流程查询',
+         url: hrUrl1 + '/aphRiskEvent.do?method=findAphFlowAndOperationList&foType=AphLawsuits',
+         qxV: ''
+       },
+       {
+         name: '待处理事件',
+         url: hrUrl1 + '/aphRiskEvent.do?method=showEventList&status=C',
+         qxV: ''
+       },
+       {
+         name: '诉讼案件列表',
+         url: hrUrl1 + '/aphRiskEvent.do?method=showEventList&type=AphLawsuits',
+         qxV: ''
+       },
+       {
+         name: '风险事件列表',
+         url: hrUrl1 + '/aphRiskEvent.do?method=showEventList&type=AphRiskEvent',
+         qxV: ''
+       },{
+         name: '风险事件工作计划',
+         url: hrUrl1 + '/planHead.do?method=getPlanList&status=B&type=APHEVENT',
+         qxV: ''
+       }
+     ]
+   },
+   {
+     ht: '企业工商管理',
+     children: [
+       {
+         name: '工商处理',
+         url: hrUrl1  + '/aphCorpManage.do?method=corpProcess',
+         qxV: ''
+       },
+       {
+         name: '工商流程状态查询',
+         url: hrUrl1  + '/aphCorpSearch.do?method=regPage',
+         qxV: ''
+       },
+       {
+         name: '工商管理列表',
+         url: hrUrl1  + '/aphCorpManage.do?method=corpList',
+         qxV: ''
+       },
+       {
+         name: '工商信息查询',
+         url: hrUrl1  + '/aphCorpSearchResult.do?method=corpInfoSearchUI',
+         qxV: ''
+       }
+     ]
+   },
+   {
+     ht: '职员宝',
+     children: [
+       {
+         name: '我要跟投',
+         url: baoUrl,
+         qxV: ''
+       },
+       {
+         name: '已投项目',
+         url: baoUrl + '/#/type=myVote',
+         qxV: ''
+       },
+       {
+         name: '跟投收益',
+         url: baoUrl + '/#/type=profitList',
+         qxV: ''
+       },
+       {
+         name: '发布项目',
+         url: baoUrl + '/#/type=projectList',
+         qxV: 'aph2_bao_XMLB-QX-M10'
+       },
+       {
+         name: '跟投审批',
+         url: baoUrl + '/#/type=financeList',
+         qxV: 'aph2_bao_JHCWSP-QX-M10'
+       },
+       {
+         name: '收款确认',
+         url: baoUrl + '/#/type=receivablesList',
+         qxV: 'aph2_bao_CNQRSK-QX-M10'
+       },
+       {
+         name: '打款确认',
+         url: baoUrl + '/#/type=makeMoneyList',
+         qxV: 'aph2_bao_CNQRDK-QX-M10'
+       }
+     ]
+   }
+
+ ];
+
+ xrCard(menuList, $('.eachLine'));
+
+</script>
+</body>
+
+</html>
+

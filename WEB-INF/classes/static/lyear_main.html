@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>首页 - 第一资产</title>
+<link rel="icon" href="favicon.ico" type="image/ico">
+<meta name="keywords" content="第一资产">
+<meta name="description" content="第一资产">
+<meta name="author" content="yinqi">
+<meta http-equiv="Expires" content="0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-control" content="no-cache">
+<meta http-equiv="Cache" content="no-cache">
+<meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+<meta HTTP-EQUIV="expires" CONTENT="Mon, 23 Jan 1978 20:52:30 GMT">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/materialdesignicons.min.css" rel="stylesheet">
+<link href="css/style.min.css" rel="stylesheet">
+<link href="css/animate.css" rel="stylesheet">
+<script type="text/javascript">
+  document.write('<link rel="stylesheet" type="text/css" href="css/main.css?'+ new Date().getTime() + '">');
+</script>
+
+</head>
+  <style type="text/css">
+    .card-body .nav-tabs a{
+      display: flex;
+    }
+    .list-group{
+      margin-top: 5px;
+    }
+  </style>
+<body>
+<div class="container-fluid p-10">
+  
+  <div class="row">
+    <div class="col-sm-14 col-md-8">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+            </ol>
+            <div class="carousel-inner">
+
+              <div class="item indexBanner b6 active">
+                <a href="activePage1.html" target="_blank"></a>
+              </div>
+              <div class="item indexBanner b7">
+                <a href="activePage2.html" target="_blank"></a>
+              </div>
+              <div class="item indexBanner b8">
+                <a href="activePage3.html" target="_blank"></a>
+              </div>
+
+              <div class="item indexBanner b2">
+                <a href="javascript: void(0)"></a>
+              </div>
+              <div class="item indexBanner b5">
+                <a href="https://www.momajinfu.com/puhui/trade/activity/toActivityRedBag" target="_blank"></a>
+              </div>
+              <div class="item indexBanner b3">
+                <a href="javascript: void(0)"></a>
+              </div>
+              <div class="item indexBanner b4">
+                <a href="javascript: void(0)"></a>
+              </div>
+              <div class="item indexBanner b1">
+                <a href="https://bao.firstcare.com.cn" target="_blank"></a>
+              </div>
+
+            </div>
+            <a class="left carousel-control" href="#carouselExampleIndicators" role="button" data-slide="prev"><span class="icon-left-open-big icon-prev" aria-hidden="true"></span><span class="sr-only">Previous</span></a>
+            <a class="right carousel-control" href="#carouselExampleIndicators" role="button" data-slide="next"><span class="icon-right-open-big icon-next" aria-hidden="true"></span><span class="sr-only">Next</span></a>
+          </div>
+    </div>
+    <div class="col-sm-10 col-md-4 p-l-0">
+      <div class="card bjNav">
+        <div class="card-header bjHeader">
+          <p class="p-0">便捷导航</p>
+          <span data-placement="left" id="addMenu" title="编辑" class="editBj text-mainRed">+</span>
+          <!-- .card-actions --> 
+        </div>
+        <div class="card-body">
+          <div class="row bjBody lyear-layout-sidebar-scroll" id="bjBodyId">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- <div class="row m-0 m-t-10 announcement">
+    <div class="col-md-8">
+      <i class="text-mainRed fa-1-5x iconfont icon-gonggao"></i>
+      <p>APH系统界面更新欢迎大家使用！</p>
+      <span class="borderRight"></span>
+    </div>
+    <div class="col-md-4">
+      <p>我的工作还有&nbsp;<a href="https://devoa.firstcare.com.cn:443/workplan/getMyTaskListByPage.action" target="_blank" class="text-mainRed text-weight workX"></a>&nbsp;项</p>
+      <p>距2021年还有&nbsp;<span class="text-mainRed text-weight workT"></span>&nbsp;天</p>
+    </div>
+  </div> -->
+  
+  <div class="row m-t-10">
+    <div class="col-sm-14 col-md-8">
+      <div class="card">
+        <div class="card-body p-lr-10">
+
+          <ul id="myTabs" class="nav nav-tabs m-b-0" role="tablist">
+            <li class="active" data-from="home"><a href="#home" id="home-tab" role="tab" data-toggle="tab">审核</a></li>
+            <li data-from="profile"><a href="#profile" role="tab" id="profile-tab" data-toggle="tab">待办</a></li>
+          </ul>
+          <ul class="card-actions card-actions-main-top">
+            <li>
+              <button type="button" class="lookMore"><i class="arrowIcon"></i></button>
+            </li>
+            <li>
+              <button type="button" class="refreashDb" title="刷新"><i class="iconShuaxin"></i></button>
+            </li>
+          </ul>
+          <div id="myTabContent" class="tab-content p-0 p-b-10">
+            <div class="tab-pane fade active in" id="home">
+              <div class="list-group m-b-0">
+               
+              </div>
+            </div>
+            <div class="tab-pane fade" id="profile">
+              <div class="list-group m-b-0">
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-10 col-md-4 p-l-0">
+      <div class="card">
+        <div class="card-body p-lr-10">
+          <ul class="nav nav-tabs m-b-0" role="tablist">
+            <li class="active" data-from="reviewed1"><a href="#reviewed1" role="tab" id="reviewed1-tab" data-toggle="tab">1.0&nbsp;审核<span class="badge badgeMain"></span></a></li>
+            <li data-from="dealt1"><a href="#dealt1" id="dealt1-tab" role="tab" data-toggle="tab">1.0&nbsp;待办<span class="badge badgeMain"></span></a></li>
+          </ul>
+          <ul class="card-actions card-actions-main-top">
+            <li>
+              <button type="button" class="lookMore" title="查看更多"><i class="arrowIcon"></i></button>
+            </li>
+            <li>
+              <button type="button" class="refreashDb" title="刷新"><i class="iconShuaxin"></i></button>
+            </li>
+          </ul>
+          <div class="tab-content p-0 p-b-10">
+            <div class="tab-pane fade active in" id="reviewed1">
+              <div class="list-group m-b-0">
+                
+              </div>
+            </div>
+            <div class="tab-pane fade" id="dealt1">
+              <div class="list-group m-b-0">
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row m-t-10">
+    <div class="col-sm-14 col-md-8">
+      <div class="card">
+        <div class="card-body p-lr-10">
+          <ul class="nav nav-tabs m-b-0 tzUl" role="tablist">
+            <li class="active" data-from="NOTICE"><a href="#notice" id="notice-tab" role="tab" data-toggle="tab">通知<span class="badge badgeMain"></span></a></li>
+            <li data-from="DECIDED"><a href="#decision" role="tab" id="decision-tab" data-toggle="tab">决定<span class="badge badgeMain"></span></a></li>
+            <li data-from="MEETING"><a href="#meeting" role="tab" id="meeting-tab" data-toggle="tab">会议<span class="badge badgeMain"></span></a></li>
+            <li data-from="ANNOUNCEMENT"><a href="#proclamation" role="tab" id="proclamation-tab" data-toggle="tab">公告<span class="badge badgeMain"></span></a></li>
+          </ul>
+          <ul class="card-actions card-actions-main-top">
+            <li>
+              <button type="button" class="lookMore" title="查看更多"><i class="arrowIcon"></i></button>
+            </li>
+            <li>
+              <button type="button" class="tzRefresh" title="刷新"><i class="iconShuaxin"></i></button>
+            </li>
+          </ul>
+          <div class="tab-content p-0 p-b-10">
+            <div class="tab-pane fade active in" id="notice">
+              <div class="list-group m-b-0">
+                
+              </div>
+            </div>
+            <div class="tab-pane fade" id="decision">
+              <div class="list-group m-b-0">
+                
+              </div>
+            </div>
+            <div class="tab-pane fade" id="meeting">
+              <div class="list-group m-b-0">
+                
+              </div>
+            </div>
+            <div class="tab-pane fade" id="proclamation">
+              <div class="list-group m-b-0">
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-10 col-md-4 p-l-0">
+      <div class="card">
+        <div class="card-body p-lr-10">
+          <ul class="nav nav-tabs m-b-0" role="tablist">
+            <li class="active"><a href="#lastNew" id="lastNew-tab" role="tab" data-toggle="tab">最新的</a></li>
+            <li><a href="#hotDoor" role="tab" id="hotDoor-tab" data-toggle="tab">热门的</a></li>
+            <li><a href="#unresolved" role="tab" id="unresolved-tab" data-toggle="tab">未解决</a></li>
+          </ul>
+          <a style="position: absolute;left: 240px;top: 9px;color: #666;" href="http://bbs.firstcare.com.cn/" target="_blank">论坛</a>
+          <ul class="card-actions card-actions-main-top">
+            <!-- <li>
+              <button type="button" title="查看更多"><i class="mdi mdi-chevron-right text-mainRed mdi-30px"></i></button>
+            </li> -->
+            <li>
+              <button type="button" class="hotAsker" title="提问"><i class="arrowIcon"></i></button>
+            </li>
+          </ul>
+          <div class="tab-content p-0 p-b-10">
+            <div class="tab-pane fade active in" id="lastNew">
+              <div class="list-group m-b-0">
+                
+              </div>
+            </div>
+            <div class="tab-pane fade" id="hotDoor">
+              <div class="list-group m-b-0">
+                
+              </div>
+            </div>
+            <div class="tab-pane fade" id="unresolved">
+              <div class="list-group m-b-0">
+                
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/perfect-scrollbar.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-multitabs/multitabs.js"></script>
+<script type="text/javascript" src="js/main.min.js"></script>
+
+<script type="text/javascript">
+  document.write('<script src="js/ajax.js?' + new Date().getTime() + '"><\/script\>');
+  document.write('<script src="js/common.js?' + new Date().getTime() + '"><\/script\>');
+</script>
+<!-- 消息提示 -->
+<script src="js/bootstrap-notify.min.js"></script>
+<script type="text/javascript" src="js/lightyear.js"></script>
+<script type="text/javascript">
+$(document).ready(function(e) {
+    $('.tzRefresh').click(function(){
+      $('#notice .list-group').hide();
+      $('#decision .list-group').hide();
+      $('#meeting .list-group').hide();
+      $('#proclamation .list-group').hide();
+      documentList();
+    })
+    $('.refreashDb').click(function(){
+      var toWhere = $(this).parents('ul').prev('ul').find('li.active').attr('data-from');
+      if(toWhere == 'dealt1'){
+        $('#dealt1 .list-group').hide();
+        mbsNoticeList();
+      } else if(toWhere == 'reviewed1'){
+        $('#reviewed1 .list-group').hide();
+        mbsApproveList();
+      } else if(toWhere == 'profile'){
+        $('#profile .list-group').hide();
+        noticeList();
+      } else if(toWhere == 'home'){
+        $('#home .list-group').hide();
+        approveList();
+      }
+    })
+    $('.lookMore').click(function(){
+      var toWhere = $(this).parents('ul').prev('ul').find('li.active').attr('data-from');
+      if(toWhere == 'dealt1'){
+        window.open("http://192.168.5.18/mg/infoCenter.do?method=showAllNeedDeal&token="+mbsToken);
+        return false;
+      } else if(toWhere == 'reviewed1'){
+        var username = $('#realName').attr('name');
+        if(username == 'zhangpeng'){
+          window.open("http://192.168.5.18/mg/taskManage.do?method=displayTaskListUI&state=Start&flowsys=aph&token="+mbsToken);
+        } else{
+          window.open("http://192.168.5.18/mg/taskManage.do?method=displayTaskListUI&state=Start&token="+mbsToken);
+        }
+        return false;
+      } else if(toWhere == 'home'){
+        window.open(approveUrl + 'approve/openApproveList.action');
+        return false;
+      } else if(toWhere == 'profile'){
+        window.open(basePath + 'notice/getBsSystemNoticeList.action');
+        return false;
+      } else if(toWhere == 'MEETING'){
+        window.open(basePath + 'meeting/getOaMeetingList.action?page=1');
+        return false;
+      } else if(toWhere){
+        window.open(basePath+"news/getNewsSystemList.action?newsSystemCO.newsType="+toWhere+"&newsSystemCO.queryType=0");
+        return false;
+      }
+    })
+    $('.hotAsker').click(function(){
+      window.open('https://oa.firstcare.com.cn:443/quora/getQuestionList?page=1');
+    })
+
+
+    // 获取token
+    var mbsToken = sessionStorage.getItem('mbsToken');
+    mbsNoticeList();
+    mbsApproveList();
+    // function getToken(){
+    //   var obj = {
+    //     url: 'mbsToken',
+    //     data: '',
+    //     success: function(res){
+    //       if(res.returnCode == 0){
+    //         mbsToken = res.data.mbsToken;
+    //         sessionStorage.setItem('mbsToken', mbsToken);
+            
+    //       } else {
+    //         lightyear.notify(res.message, 'danger', 2000);
+    //       }
+    //     }
+    //   }
+    //   ajaxObj(obj, 'GET');
+    // }
+    // getToken();
+
+
+// 边界导航相关
+ $('#addMenu').click(function(){
+  menuIconList('click', $('.bjBody'));
+ });
+ menuIconList('a', $('.bjBody'));
+
+
+// 待审核任务
+    function approveList(){
+      var obj = {
+        url: 'approveList',
+        data: '',
+        success: function(res){
+          if(res.returnCode == 0){
+            $('#home .list-group').empty().fadeIn();
+            if(res.data.length>0){
+              var len = getLen(res.data.length);
+              for(var i=0; i<len; i++){
+                var $a = '<a href='+approveUrl+'approve/showApproveFlow.action?approve.approveId='+res.data[i].approveId+' class="list-group-item" target="_blank">'+
+                    '<span class="badge noBack">'+getDayCha(res.data[i].lastUpdatedDate)+'</span>'+
+                    '<span class="bqStyle label '+getClass(res.data[i].approveType)+'" title="'+getBqTitle(res.data[i].approveType)+'">'+getBg(res.data[i].approveType)+'</span>'+
+                    '<span class="bqStyle label label-cyan '+getTaskSubTitle(res.data[i].taskSubTitle)+'">'+res.data[i].taskSubTitle+'</span>'+
+                    '<p class="overSis p-r-10 m-0">'+res.data[i].approveTitle+'</p>'+
+                  '</a>';
+                $('#home .list-group').append($a);
+              }
+            } else {
+              return false;
+            }
+          } else {
+            lightyear.notify(res.message, 'danger', 2000);
+          }
+        }
+      }
+      ajaxObj(obj, 'GET');
+    }
+    approveList();
+
+// 待办任务
+    function noticeList(){
+      var obj = {
+        url: 'noticeList',
+        data: '',
+        success: function(res){
+          if(res.returnCode == 0){
+            $('#profile .list-group').empty().fadeIn();
+            if(res.data.length>0){
+              var len = getLen(res.data.length);
+              for(var i=0; i<len; i++){
+                var $a = '<a href="javascript:void(0)" class="list-group-item">'+
+                    '<span class="badge noBack">'+getDayCha(res.data[i].createdDate)+'</span>'+
+                    '<p class="overSis p-r-10 m-0">'+res.data[i].noticeTypeDesc+' | '+res.data[i].noticeContent+'</p>'+
+                  '</a>';
+                $('#profile .list-group').append($a);
+              }
+              for(var i2=0; i2<len; i2++){
+                $('#profile .list-group .list-group-item').eq(i2).bind('click', {index: i2}, abc);
+                function abc(event){
+                  var index = event.data.index;
+                  readNotice(res.data[index].noticeId, res.data[index].noticeType, res.data[index].noticeHandleAddress, res.data[index].noticeCode);
+                }
+              }
+            } else {
+              return false;
+            }
+          } else {
+            lightyear.notify(res.message, 'danger', 2000);
+          }
+        }
+      }
+      ajaxObj(obj, 'GET');
+    }
+    noticeList();
+
+
+
+// 1.0代办
+    function mbsNoticeList(){
+      var obj = {
+        url: 'mbsNoticeList',
+        data: '',
+        success: function(res){
+          if(res.returnCode == 0){
+            $('#dealt1 .list-group').empty().fadeIn();
+            if(res.data.length>0){
+              if(res.data[0]){
+                append1_0(res.data.length, res.data, $('#dealt1'), $('#dealt1-tab'));
+              }
+            } else {
+              return false;
+            }
+          } else {
+            lightyear.notify(res.message, 'danger', 2000);
+          }
+        }
+      }
+      var cs = '&mbsToken=' + mbsToken;
+      ajaxObj(obj, 'GET', cs);
+    }
+
+// 1.0待审核
+    function mbsApproveList(){
+      var obj = {
+        url: 'mbsApproveList',
+        data: '',
+        success: function(res){
+          if(res.returnCode == 0){
+            $('#reviewed1 .list-group').empty().fadeIn();
+            if(res.data.length>0){
+              append1_0(res.data.length, res.data, $('#reviewed1'), $('#reviewed1-tab'));
+            } else {
+              return false;
+            }
+          } else {
+            lightyear.notify(res.message, 'danger', 2000);
+          }
+        }
+      }
+      var cs = '&mbsToken=' + mbsToken;
+      ajaxObj(obj, 'GET', cs);
+    }
+
+// 通知
+    function documentList(sx){
+      var obj = {
+        url: 'documentList',
+        data: '',
+        success: function(res){
+          if(res.returnCode == 0){
+            $('#notice .list-group').empty().fadeIn();
+            $('#decision .list-group').empty().fadeIn();
+            $('#meeting .list-group').empty().fadeIn();
+            $('#proclamation .list-group').empty().fadeIn();
+            $('#notice-tab').find('.badgeMain').hide().text('');
+            $('#proclamation-tab').find('.badgeMain').hide().text('');
+            $('#decision-tab').find('.badgeMain').hide().text('');
+            $('#meeting-tab').find('.badgeMain').hide().text('');
+            if(res.data.length>0){
+              var tz = [], jd = [], hy = [], gg = [];
+              // var tzNum = 0, jdNum = 0, ggNum = 0;
+              for (var i = 0; i < res.data.length; i++) {
+                if(res.data[i].documentType == 'NOTICE'){
+                  if(res.data[i].documentTop == 'TOTAL'){
+                    // tzNum++;
+                    if(res.data[i].readNum>99){
+                      $('#notice-tab').find('.badgeMain').show().text(99);
+                    } else {
+                      $('#notice-tab').find('.badgeMain').show().text(res.data[i].readNum);
+                    }
+                  } else {
+                    tz.push(res.data[i]);
+                  }
+                } else if(res.data[i].documentType == 'ANNOUNCEMENT'){
+                  if(res.data[i].documentTop == 'TOTAL'){
+                    // ggNum++;
+                    if(res.data[i].readNum>99){
+                      $('#proclamation-tab').find('.badgeMain').show().text(99);
+                    } else {
+                      $('#proclamation-tab').find('.badgeMain').show().text(res.data[i].readNum);
+                    }
+                  } else {
+                    gg.push(res.data[i]);
+                  }
+                } else if(res.data[i].documentType == 'DECIDED'){
+                  if(res.data[i].documentTop == 'TOTAL'){
+                    // jdNum++;
+                    if(res.data[i].readNum>99){
+                      $('#decision-tab').find('.badgeMain').show().text(99);
+                    } else {
+                      $('#decision-tab').find('.badgeMain').show().text(res.data[i].readNum);
+                    }
+                  } else {
+                    jd.push(res.data[i]);
+                  }
+                } else if(res.data[i].documentType == 'MEETING'){
+                  if(res.data[i].documentTop == 'TOTAL'){
+                    if(res.data[i].readNum>99){
+                      $('#meeting-tab').find('.badgeMain').show().text(99);
+                    } else {
+                      $('#meeting-tab').find('.badgeMain').show().text(res.data[i].readNum);
+                    }
+                  } else {
+                    hy.push(res.data[i]);
+                  }
+                }
+              }
+              // if(tzNum == 0){
+              //   $('#notice-tab').find('.badgeMain').show().text(0);
+              // }
+              // if(jdNum == 0){
+              //   $('#decision-tab').find('.badgeMain').show().text(0);
+              // }
+              // if(ggNum == 0){
+              //   $('#proclamation-tab').find('.badgeMain').show().text(0);
+              // }
+              var tzLen = getLen(tz.length);
+              var jdLen = getLen(jd.length);
+              var hyLen = getLen(hy.length);
+              var ggLen = getLen(gg.length);
+              appendFn(tzLen, tz, $('#notice'), tzGGUrl);
+              appendFn(jdLen, jd, $('#decision'), tzGGUrl);
+              appendFn(hyLen, hy, $('#meeting'), meetingUrl);
+              appendFn(ggLen, gg, $('#proclamation'), tzGGUrl);
+            } else {
+              return false;
+            }
+          } else {
+            lightyear.notify(res.message, 'danger', 2000);
+          }
+        }
+      }
+      ajaxObj(obj, 'GET');
+    }
+    documentList();
+
+
+// 热门问题
+    function questionList(){
+      var obj = {
+        url: 'questionList',
+        data: '',
+        success: function(res){
+          if(res.returnCode == 0){
+            $('#lastNew .list-group').empty();
+            $('#hotDoor .list-group').empty();
+            $('#unresolved .list-group').empty();
+            if(res.data.length>0){
+              var NEW = [], POPULAR = [], UNSOLVED = [];
+              for (var i = 0; i < res.data.length; i++) {
+                if(res.data[i].type == 'NEW'){
+                  NEW.push(res.data[i]);
+                } else if(res.data[i].type == 'POPULAR'){
+                  POPULAR.push(res.data[i]);
+                } else if(res.data[i].type == 'UNSOLVED'){
+                  UNSOLVED.push(res.data[i]);
+                }
+              }
+              var len1 = getLen(NEW);
+              var len2 = getLen(POPULAR);
+              var len3 = getLen(UNSOLVED);
+              appendHot(len1, NEW, $('#lastNew'), askUrl);
+              appendHot(len2, POPULAR, $('#hotDoor'), askUrl);
+              appendHot(len3, UNSOLVED, $('#unresolved'), askUrl);
+            } else {
+              return false;
+            }
+          } else {
+            lightyear.notify(res.message, 'danger', 2000);
+          }
+        }
+      }
+      ajaxObj(obj, 'GET');
+    }
+    questionList();
+
+// 审核待办地址返回
+    function readNotice(id, type, address, code){
+      var status="read";
+      if(address.indexOf('?') == -1){
+        var url = address +'?noticeCode='+code;
+
+      } else {
+        var url = address + '&noticeCode='+code;
+      }
+      //工作计划任务、里程碑任务、任务日志、标准化体系文件发布不能手动操作已读、未读
+      if(type=="TASK" || type=="TASKLOG" || type=="MTASKT" || type=="SYSTEM"){
+        window.open(url);
+        return;
+      } else {
+        $.ajax({
+          type : "post",
+          url : api.updateNoticeStatus + sessionStorage.getItem('sso_sessionid'),
+          data : {"noticeId":id,"status":status},
+          cache : false,
+          contentType : "application/x-www-form-urlencoded;charset=UTF-8",
+          dataType : "json",
+          success : function(res) {
+            if(res.returnCode == 0){
+               window.open(url);
+             }
+          }
+        });
+      }
+    }
+
+});
+</script>
+</body>
+</html>
